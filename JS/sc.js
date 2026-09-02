@@ -221,3 +221,19 @@ let num = 12;
 // let str2 = 'java';
 
 // console.log(str2.slice(-3))
+
+
+
+// document.querySelector('button').onclick = function () {
+//     console.log('clicked')
+// }
+
+
+document.querySelector('button')
+    .addEventListener('click', (e) => {
+        // console.log(e)
+        console.log(e.preventDefault());
+        // console.log(e.view.navigator.appCodeName);
+        // console.log(e.view.navigator.appName);
+
+    });
