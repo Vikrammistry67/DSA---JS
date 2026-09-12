@@ -27,14 +27,7 @@ class LinkedList {
         this.size++;
     };
 
-    deleteAtFirst() {
-        if (this.head == null) {
-            console.log('Empty List');
-            return;
-        };
-        this.size--;
-        this.head = this.head.next;
-    };
+
 
     insertAtLast(val) {
         this.size++;
@@ -52,6 +45,42 @@ class LinkedList {
         temp.next = newNode;
     };
 
+
+    insertAtIndex(val, idx) {
+        if (idx < 0 || idx > this.size) {
+            console.log('Not Possible');
+            return;
+        };
+
+        if (this.head == null) {
+            console.log('Empty List');
+            return;
+        };
+
+
+        let newNode = new Node(val);
+        let temp = this.head;
+
+        for (let i = 0; i < idx - 1; i++) {
+            temp = temp.next;
+        };
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+
+
+    deleteAtFirst() {
+        if (this.head == null) {
+            console.log('Empty List');
+            return;
+        };
+        this.size--;
+        this.head = this.head.next;
+    };
+
+
     deleteAtLast() {
         if (this.head == null) {
             console.log('Empty List');
@@ -65,6 +94,25 @@ class LinkedList {
         this.size--;
         temp.next = temp.next.next;
     };
+
+    deleteAtIndex(idx) {
+        if (idx < 0 || idx > this.size) {
+            console.log('Not Possible');
+            return;
+        };
+
+        if(this.head == null){
+            console.log('Empty List');
+            return;
+        };
+
+        let temp = this.head;
+        for (let i = 0; i < idx - 1; i++){
+            temp = temp.next;
+        };
+
+        temp.next = temp.next.next;
+    }
 
     printAll() {
         if (this.head == null) {
@@ -96,10 +144,19 @@ nodeOne.deleteAtFirst();
 
 nodeOne.printAll();
 
-nodeOne.insertAtLast(400);  
+nodeOne.insertAtLast(400);
 
 nodeOne.printAll();
 
 nodeOne.deleteAtLast();
+
+nodeOne.printAll();
+
+
+nodeOne.insertAtIndex(10000, 3);
+
+nodeOne.printAll();
+
+nodeOne.deleteAtIndex(3);
 
 nodeOne.printAll();
