@@ -1,162 +1,171 @@
 // create Node ---->
 
-class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null
-    };
-};
+// class Node {
+//     constructor(val) {
+//         this.val = val;
+//         this.next = null
+//     };
+// };
 
 
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-        this.size = 0;
-    };
+// class LinkedList {
+//     constructor() {
+//         this.head = null;
+//         this.size = 0;
+//     };
 
-    insertAtFirst(val) {
-        let newNode = new Node(val);
+//     insertAtFirst(val) {
+//         let newNode = new Node(val);
 
-        if (this.head == null) {
-            this.head = newNode;
-            return;
-        };
-        newNode.next = this.head;
-        this.head = newNode;
-        this.size++;
-    };
-
-
-
-    insertAtLast(val) {
-        this.size++;
-        let newNode = new Node(val);
-        if (this.head == null) {
-            this.head = newNode;
-            return;
-        };
-
-        let temp = this.head;
-        while (temp.next != null) {
-            temp = temp.next;
-        };
-
-        temp.next = newNode;
-    };
-
-
-    insertAtIndex(val, idx) {
-        if (idx < 0 || idx > this.size) {
-            console.log('Not Possible');
-            return;
-        };
-
-        if (this.head == null) {
-            console.log('Empty List');
-            return;
-        };
-
-
-        let newNode = new Node(val);
-        let temp = this.head;
-
-        for (let i = 0; i < idx - 1; i++) {
-            temp = temp.next;
-        };
-
-        newNode.next = temp.next;
-        temp.next = newNode;
-    }
+//         if (this.head == null) {
+//             this.head = newNode;
+//             return;
+//         };
+//         newNode.next = this.head;
+//         this.head = newNode;
+//         this.size++;
+//     };
 
 
 
-    deleteAtFirst() {
-        if (this.head == null) {
-            console.log('Empty List');
-            return;
-        };
-        this.size--;
-        this.head = this.head.next;
-    };
+//     insertAtLast(val) {
+//         this.size++;
+//         let newNode = new Node(val);
+//         if (this.head == null) {
+//             this.head = newNode;
+//             return;
+//         };
+
+//         let temp = this.head;
+//         while (temp.next != null) {
+//             temp = temp.next;
+//         };
+
+//         temp.next = newNode;
+//     };
 
 
-    deleteAtLast() {
-        if (this.head == null) {
-            console.log('Empty List');
-            return;
-        };
+//     insertAtIndex(val, idx) {
+//         if (idx < 0 || idx > this.size) {
+//             console.log('Not Possible');
+//             return;
+//         };
 
-        let temp = this.head;
-        while (temp.next.next != null) {
-            temp = temp.next;
-        };
-        this.size--;
-        temp.next = temp.next.next;
-    };
-
-    deleteAtIndex(idx) {
-        if (idx < 0 || idx > this.size) {
-            console.log('Not Possible');
-            return;
-        };
-
-        if(this.head == null){
-            console.log('Empty List');
-            return;
-        };
-
-        let temp = this.head;
-        for (let i = 0; i < idx - 1; i++){
-            temp = temp.next;
-        };
-
-        temp.next = temp.next.next;
-    }
-
-    printAll() {
-        if (this.head == null) {
-            console.log('Empty List');
-            return;
-        };
-
-        let temp = this.head;
-        while (temp != null) {
-            process.stdout.write(temp.val + ' -> ');
-            temp = temp.next;
-        };
-        console.log('Null')
-    };
-};
+//         if (this.head == null) {
+//             console.log('Empty List');
+//             return;
+//         };
 
 
-let nodeOne = new LinkedList();
-nodeOne.insertAtFirst(10);
-nodeOne.insertAtFirst(20);
-nodeOne.insertAtFirst(30);
-nodeOne.insertAtFirst(40);
-nodeOne.insertAtFirst(50);
-nodeOne.insertAtFirst(250);
+//         let newNode = new Node(val);
+//         let temp = this.head;
 
-nodeOne.printAll();
+//         for (let i = 0; i < idx - 1; i++) {
+//             temp = temp.next;
+//         };
 
-nodeOne.deleteAtFirst();
-
-nodeOne.printAll();
-
-nodeOne.insertAtLast(400);
-
-nodeOne.printAll();
-
-nodeOne.deleteAtLast();
-
-nodeOne.printAll();
+//         newNode.next = temp.next;
+//         temp.next = newNode;
+//     }
 
 
-nodeOne.insertAtIndex(10000, 3);
 
-nodeOne.printAll();
+//     deleteAtFirst() {
+//         if (this.head == null) {
+//             console.log('Empty List');
+//             return;
+//         };
+//         this.size--;
+//         this.head = this.head.next;
+//     };
 
-nodeOne.deleteAtIndex(3);
 
-nodeOne.printAll();
+//     deleteAtLast() {
+//         if (this.head == null) {
+//             console.log('Empty List');
+//             return;
+//         };
+
+//         let temp = this.head;
+//         while (temp.next.next != null) {
+//             temp = temp.next;
+//         };
+//         this.size--;
+//         temp.next = temp.next.next;
+//     };
+
+//     deleteAtIndex(idx) {
+//         if (idx < 0 || idx > this.size) {
+//             console.log('Not Possible');
+//             return;
+//         };
+
+//         if(this.head == null){
+//             console.log('Empty List');
+//             return;
+//         };
+
+//         let temp = this.head;
+//         for (let i = 0; i < idx - 1; i++){
+//             temp = temp.next;
+//         };
+
+//         temp.next = temp.next.next;
+//     }
+
+//     printAll() {
+//         if (this.head == null) {
+//             console.log('Empty List');
+//             return;
+//         };
+
+//         let temp = this.head;
+//         while (temp != null) {
+//             process.stdout.write(temp.val + ' -> ');
+//             temp = temp.next;
+//         };
+//         console.log('Null')
+//     };
+// };
+
+
+// let nodeOne = new LinkedList();
+// nodeOne.insertAtFirst(10);
+// nodeOne.insertAtFirst(20);
+// nodeOne.insertAtFirst(30);
+// nodeOne.insertAtFirst(40);
+// nodeOne.insertAtFirst(50);
+// nodeOne.insertAtFirst(250);
+
+// nodeOne.printAll();
+
+// nodeOne.deleteAtFirst();
+
+// nodeOne.printAll();
+
+// nodeOne.insertAtLast(400);
+
+// nodeOne.printAll();
+
+// nodeOne.deleteAtLast();
+
+// nodeOne.printAll();
+
+
+// nodeOne.insertAtIndex(10000, 3);
+
+// nodeOne.printAll();
+
+// nodeOne.deleteAtIndex(3);
+
+// nodeOne.printAll();
+
+
+
+
+
+
+//Q2 ---> Middle Node ? floyd's Tortoe Algorithm ?
+
+
