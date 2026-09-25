@@ -77,47 +77,49 @@
 
 // Q1/- ----> Level Order Traversal ?
 
-// var levelOrder = function (root) {
-//     let ans = [];
-//     if (root == null) return ans;
+var levelOrder = function (root) {
+    let ans = [];
+    if (root == null) return ans;
 
-//     let q = [];
-//     q.push(root);
-//     while (q.length != 0) {
-//         let size = q.length;
-//         let curr = [];
-//         for (let i = 0; i < size; i++) {
-//             let node = q.shift();
-//             curr.push(node.val);
-//             if (node.left != null) q.push(node.left);
-//             if (node.right != null) q.push(node.right);
-//         };
-//         ans.push(curr);
-//     };
-//     return ans;
-// };
+    let q = [];
+    q.push(root);
+    while (q.length != 0) {
+        let size = q.length;
+        let curr = [];
+        for (let i = 0; i < size; i++) {
+            let node = q.shift();
+            curr.push(node.val);
+            if (node.left != null) q.push(node.left);
+            if (node.right != null) q.push(node.right);
+        };
+        ans.push(curr);
+    };
+    return ans;
+};
 
+
+console.log(levelOrder([3, 9, 20, null, null, 15, 7]))
 
 
 
 
 
 // Q2 ----> Symmetric Tree ?
-function solve(p, q) {
-    if (p == null && q == null) return true;
-    if ((p == null && q != null) || (p != null && q == null)) return false;
+// function solve(p, q) {
+//     if (p == null && q == null) return true;
+//     if ((p == null && q != null) || (p != null && q == null)) return false;
 
-    if (p.val == q.val) {
-        let left = solve(p.left, q.right);
-        let right = solve(p.right, q.left);
-        return left && right;
-    };
-    return false;
-};
+//     if (p.val == q.val) {
+//         let left = solve(p.left, q.right);
+//         let right = solve(p.right, q.left);
+//         return left && right;
+//     };
+//     return false;
+// };
 
-function isSymmetric(root) {
-    if (root == null) return true;
-    return solve(root.left, root.right);
-};
+// function isSymmetric(root) {
+//     if (root == null) return true;
+//     return solve(root.left, root.right);
+// };
 
-console.log(isSymmetric([1, 2, 2, null, 3, null, 3]));
+// console.log(isSymmetric([1, 2, 2, null, 3, null, 3]));
