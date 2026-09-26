@@ -148,8 +148,164 @@
 //     };
 
 
-    
+
 //     return longest;
 // };
 
 // console.log(longestConsecutive(nums));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------ TREE -------------------------------------------------------
+
+// Q1 --> Design a Tree ?
+
+// class Node {
+//     constructor(val) {
+//         this.val = val;
+//         this.left = null;
+//         this.right = null;
+//     };
+// };
+
+
+// let prompt = require('prompt-sync')();
+// class Tree {
+//     buildTree() {
+//         let data = prompt('Enter Data ');
+//         if (data == -1) return null;
+
+//         let root = new Node(data);
+
+//         console.log('Enter left node of : ', data);
+//         root.left = this.buildTree();
+//         console.log('Enter right node of : ', data);
+//         root.right = this.buildTree();
+
+//         return root;
+//     };
+
+
+
+//     // BFS --->
+//     preOrder(root) {
+//         if (root == null) return;
+//         process.stdout.write(root.val + ' ');
+//         this.preOrder(root.left);
+//         this.preOrder(root.right);
+//     };
+
+
+//     postOrder(root) {
+//         if (root == null) return;
+//         this.postOrder(root.left);
+//         this.postOrder(root.right);
+//         process.stdout.write(root.val + ' ');
+//     };
+
+
+
+//     inOrder(root) {
+//         if (root == null) return;
+//         this.postOrder(root.left);
+//         process.stdout.write(root.val + ' ');
+//         this.postOrder(root.right);
+//     };
+// };
+
+
+// let obj = new Tree();
+// let root = obj.buildTree();
+// obj.preOrder(root);
+// obj.postOrder(root);
+// obj.inOrder(root);
+
+
+
+
+
+
+
+
+// Q2 --> Level Order Traversal ?
+
+
+// function levelOrder(root) {
+//     let ans = [];
+//     if (root == null) return ans;
+
+//     let q = [root];
+//     let front = 0;
+
+//     while (front < q.length) {
+//         let size = q.length - front;
+//         let curr = [];
+
+//         for (let i = 0; i < size; i++) {
+//             let temp = q[front++];
+
+//             curr.push(temp.val);
+
+//             if (temp.left != null) q.push(temp.left);
+//             if (temp.right != null) q.push(temp.right);
+//         }
+
+//         ans.push(curr);
+//     }
+
+//     return ans;
+// }
+
+
+// console.log(levelOrder([3, 9, 20, null, null, 15, 7]))
+
+
+
+
+
+
+
+
+
+
+// Q3 ---> check whether is tree is Symmetric or not ?
+
+var solve = function (p, q) {
+    if (p == null && q == null) return true;
+    if ((p == null && q != null) || (p != null && q == null)) return false;
+
+    if (p.val == q.val) {
+        let left = solve(p.left, q.right);
+        let right = solve(p.right, q.left);
+        return left && right;
+    };
+    return false;
+};
+
+
+var isSymmetric = function (root) {
+    if (root == null) return true;
+    return solve(root.left, root.right);
+};
+
+
+console.log(isSymmetric([1, 2, 2, null, 3, null, 3]))
