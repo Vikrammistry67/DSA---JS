@@ -1,12 +1,10 @@
-// ---------------------------------------------- Design Linked List ------------------------------------------------------
-
+// ---------------------------------------------------- design Linked List ----------------------------------------------------------------
 class Node {
     constructor(val) {
         this.val = val;
         this.next = null;
     };
 };
-
 
 
 class LinkedList {
@@ -18,7 +16,6 @@ class LinkedList {
 
     insertAtFirst(val) {
         let newNode = new Node(val);
-
         if (this.head == null) {
             this.head = newNode;
             return;
@@ -28,11 +25,10 @@ class LinkedList {
         this.head = newNode;
     };
 
-
     insertAtLast(val) {
         let newNode = new Node(val);
         if (this.head == null) {
-            console.log('Not Possible');
+            console.log('not possible');
             return;
         };
 
@@ -45,18 +41,37 @@ class LinkedList {
         this.size++;
     };
 
+    insertAtIndex(index, val) {
+        let newNode = new Node(val);
+        if (index < 0 || index > this.size) {
+            console.log('Not possible');
+            return
+        };
+
+        let temp = this.head;
+        for (let i = 0; i < index - 1; i++) {
+            temp = temp.next;
+        };
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+        this.size++;
+    };
+
+
     deleteAtFirst() {
         if (this.head == null) {
-            console.log('Not Possible');
+            console.log('Empty List');
             return;
         };
 
         this.head = this.head.next;
     };
 
+
     deleteAtLast() {
         if (this.head == null) {
-            console.log('Not Possible');
+            console.log('Empty List');
             return;
         };
 
@@ -66,26 +81,13 @@ class LinkedList {
         };
 
         temp.next = temp.next.next;
+        this.size++;
     };
 
-    insertAtIndex(index, val) {
-        let newNode = new Node(val);
-        if (index > this.size && this.size < 0) {
-            console.log('Not Possible');
-            return;
-        };
-
-        let temp = this.head;
-        for (let i = 0; i < index - 1; i++) {
-            newNode.next = temp.next;
-            temp.next = newNode;
-        };
-
-    };
 
     deleteAtIndex(index) {
-        if (this.size < 0 && this.size > index) {
-            console.log('Not Possible');
+        if (index < 0 || index > this.size) {
+            console.log('Not possible');
             return;
         };
 
@@ -93,12 +95,13 @@ class LinkedList {
         for (let i = 0; i < index - 1; i++) {
             temp = temp.next;
         };
-        temp.next = temp.next.next
+
+        temp.next = temp.next.next;
     };
 
-    traverseList() {
+    printLinkedList() {
         if (this.head == null) {
-            console.log('Not Possible');
+            console.log('Not possible');
             return;
         };
 
@@ -107,36 +110,35 @@ class LinkedList {
             process.stdout.write(temp.val + ' -> ');
             temp = temp.next;
         };
-        console.log('NUll')
+        console.log('NUll');
+        this.size++;
     };
-};
 
+};
 
 let obj = new LinkedList();
 obj.insertAtFirst(10);
-
 obj.insertAtFirst(20);
 obj.insertAtFirst(30);
 obj.insertAtFirst(40);
 obj.insertAtFirst(50);
 
-obj.traverseList();
-
-
+obj.printLinkedList();
 obj.insertAtLast(1000);
-obj.traverseList();
+obj.printLinkedList();
+
+
+obj.insertAtIndex(3, 45000);
+obj.printLinkedList();
 
 
 obj.deleteAtFirst();
-obj.traverseList();
+obj.printLinkedList();
+
 
 obj.deleteAtLast();
-obj.traverseList();
+obj.printLinkedList();
 
 
-obj.insertAtIndex(2, 450);
-obj.traverseList();
-
-
-obj.deleteAtIndex();
-obj.traverseList();
+obj.deleteAtIndex(3);
+obj.printLinkedList();
