@@ -108,4 +108,29 @@
 
 
 
+
+
+
+
 // 5 --------> count of SubArray Sum equals to k ?
+
+let nums = [10, 2, -2, -20, 10], k = -10;
+
+function SubArray(nums, k) {
+    let map = new Map();
+    let count = 0, sum = 0;
+
+    map.set(0, 1);
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+        if (map.has(sum - k)) {
+            count += map.get(sum - k);
+        } else if (map.has(sum)) {
+            map.set(sum, map.get(sum) + 1);
+        } else map.set(sum, 1);
+    };
+
+    return count;
+};
+
+console.log(SubArray(nums, k));
