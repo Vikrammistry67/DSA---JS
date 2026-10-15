@@ -9,75 +9,75 @@
 
 
 
-class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
-}
+// class Node {
+//     constructor(val) {
+//         this.val = val;
+//         this.next = null;
+//     }
+// }
 
-class Queue {
-    constructor() {
-        this.front = null;
-    }
+// class Queue {
+//     constructor() {
+//         this.front = null;
+//     }
 
-    enqueue(val) {
-        const newNode = new Node(val);
+//     enqueue(val) {
+//         const newNode = new Node(val);
 
-        // First node
-        if (this.front === null) {
-            this.front = newNode;
-            return;
-        }
+//         // First node
+//         if (this.front === null) {
+//             this.front = newNode;
+//             return;
+//         }
 
-        // Find the last node
-        let temp = this.front;
+//         // Find the last node
+//         let temp = this.front;
 
-        while (temp.next !== null) {
-            temp = temp.next;
-        }
+//         while (temp.next !== null) {
+//             temp = temp.next;
+//         }
 
-        temp.next = newNode;
-    }
+//         temp.next = newNode;
+//     }
 
-    dequeue() {
-        if (this.front === null) {
-            console.log("Empty Queue");
-            return;
-        }
+//     dequeue() {
+//         if (this.front === null) {
+//             console.log("Empty Queue");
+//             return;
+//         }
 
-        this.front = this.front.next;
-    }
+//         this.front = this.front.next;
+//     }
 
-    printQueue() {
-        if (this.front === null) {
-            console.log("Empty Queue");
-            return;
-        }
+//     printQueue() {
+//         if (this.front === null) {
+//             console.log("Empty Queue");
+//             return;
+//         }
 
-        let temp = this.front;
+//         let temp = this.front;
 
-        while (temp !== null) {
-            process.stdout.write(temp.val + " -> ");
-            temp = temp.next;
-        }
+//         while (temp !== null) {
+//             process.stdout.write(temp.val + " -> ");
+//             temp = temp.next;
+//         }
 
-        console.log("Null");
-    }
-}
+//         console.log("Null");
+//     }
+// }
 
-const obj = new Queue();
+// const obj = new Queue();
 
-obj.enqueue(10);
-obj.enqueue(20);
-obj.enqueue(30);
-obj.enqueue(40);
-obj.enqueue(50);
+// obj.enqueue(10);
+// obj.enqueue(20);
+// obj.enqueue(30);
+// obj.enqueue(40);
+// obj.enqueue(50);
 
-obj.printQueue();
+// obj.printQueue();
 
-obj.dequeue();
-obj.printQueue();
+// obj.dequeue();
+// obj.printQueue();
 
 
 
