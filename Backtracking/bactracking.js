@@ -100,4 +100,5 @@ function powerSet(s) {
     return ans;
 };
 
+
 console.log(powerSet(s));
