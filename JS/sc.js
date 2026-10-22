@@ -229,11 +229,58 @@ let num = 12;
 // }
 
 
-document.querySelector('button')
-    .addEventListener('click', (e) => {
-        // console.log(e)
-        console.log(e.preventDefault());
-        // console.log(e.view.navigator.appCodeName);
-        // console.log(e.view.navigator.appName);
+// document.querySelector('button')
+//     .addEventListener('click', (e) => {
+//         // console.log(e)
+//         console.log(e.preventDefault());
+//         // console.log(e.view.navigator.appCodeName);
+//         // console.log(e.view.navigator.appName);
 
-    });
+//     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let b = 10;
+// let b = 20;
+// b = 40
+// console.log(b)
+
+// const a = 50;
+
+// function Login() { };
+
+
+// Login.prototype.heyBaby = function () {
+//     return 'Hey Baby You called me !'
+// };
+
+// const userOne = new Login();
+// console.log(userOne.heyBaby());
+
+
+
+let User = (function multiply(username) {
+    return `Hey ${username}`;
+})('Vikram Mistry');
+
+console.log(User)
