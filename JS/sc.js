@@ -289,10 +289,39 @@ let num = 12;
 
 
 
-let arr = [10, 20, 30, 40, 50];
+// let arr = [10, 20, 30, 40, 50];
 
-console.log(arr);
-console.log(arr.slice(0, 2));
-console.log(arr.splice(2, arr.length, 'hey'));
+// console.log(arr);
+// console.log(arr.slice(0, 2));
+// console.log(arr.splice(2, arr.length, 'hey'));
 
-console.log(arr);
+// console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+function setUsername(username) {
+    this.username = username;
+    console.log(this.username);
+};
+
+
+function User(username, age, email) {
+    setUsername.call(this, username)
+    this.age = age;
+    this.email = email;
+};
+
+
+let userOne = new User('Vikram Mistry', 24, 'v@gmail.com');
+
+
+
