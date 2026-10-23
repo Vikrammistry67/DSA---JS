@@ -279,8 +279,20 @@ let num = 12;
 
 
 
-let User = (function multiply(username) {
-    return `Hey ${username}`;
-})('Vikram Mistry');
+// let User = (function multiply(username) {
+//     return `Hey ${username}`;
+// })('Vikram Mistry');
 
-console.log(User)
+// console.log(User)
+
+
+
+
+
+let arr = [10, 20, 30, 40, 50];
+
+console.log(arr);
+console.log(arr.slice(0, 2));
+console.log(arr.splice(2, arr.length, 'hey'));
+
+console.log(arr);
