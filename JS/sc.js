@@ -373,3 +373,17 @@ for (let num of arr) {
 for (let i in arr) {
     console.log(i)
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
