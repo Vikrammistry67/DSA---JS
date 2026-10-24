@@ -308,16 +308,17 @@ let num = 12;
 
 
 
-function setUsername(username) {
+function setUsername(username, email) {
     this.username = username;
-    console.log(this.username);
+    this.email = email;
+    // console.log(this.username);
+    // console.log(this.email)
 };
 
 
 function User(username, age, email) {
-    setUsername.call(this, username)
+    setUsername.call(this, [username, email])
     this.age = age;
-    this.email = email;
 };
 
 
@@ -325,3 +326,50 @@ let userOne = new User('Vikram Mistry', 24, 'v@gmail.com');
 
 
 
+
+
+
+
+
+
+
+
+// ----------------------------------------------- Promise ----------------------------------------------------------
+
+
+let myPromise = new Promise((resolve, reject) => {
+    let isSuccess = !false;
+
+    setTimeout(() => {
+        if (isSuccess) {
+            resolve('promise will resolved');
+        } else {
+            reject('promise rejected');
+        };
+    }, 3000);
+});
+
+
+myPromise
+    .then((data) => `hey ${data}`)
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err))
+    .finally(() => console.log('mai to chalunga hi !'))
+
+
+
+
+
+
+
+let arr = [10, 20, 30, 40, 50];
+
+for (let num of arr) {
+    console.log(typeof typeof typeof num);
+};
+
+
+
+for (let i in arr) {
+    console.log(i)
+};
