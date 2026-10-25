@@ -308,21 +308,21 @@ let num = 12;
 
 
 
-function setUsername(username, email) {
-    this.username = username;
-    this.email = email;
-    // console.log(this.username);
-    // console.log(this.email)
-};
+// function setUsername(username, email) {
+//     this.username = username;
+//     this.email = email;
+//     // console.log(this.username);
+//     // console.log(this.email)
+// };
 
 
-function User(username, age, email) {
-    setUsername.call(this, [username, email])
-    this.age = age;
-};
+// function User(username, age, email) {
+//     setUsername.call(this, [username, email])
+//     this.age = age;
+// };
 
 
-let userOne = new User('Vikram Mistry', 24, 'v@gmail.com');
+// let userOne = new User('Vikram Mistry', 24, 'v@gmail.com');
 
 
 
@@ -337,54 +337,196 @@ let userOne = new User('Vikram Mistry', 24, 'v@gmail.com');
 // ----------------------------------------------- Promise ----------------------------------------------------------
 
 
-let myPromise = new Promise((resolve, reject) => {
-    let isSuccess = !false;
+// let myPromise = new Promise((resolve, reject) => {
+//     let isSuccess = !false;
 
-    setTimeout(() => {
-        if (isSuccess) {
-            resolve('promise will resolved');
-        } else {
-            reject('promise rejected');
-        };
-    }, 3000);
-});
-
-
-myPromise
-    .then((data) => `hey ${data}`)
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err))
-    .finally(() => console.log('mai to chalunga hi !'))
+//     setTimeout(() => {
+//         if (isSuccess) {
+//             resolve('promise will resolved');
+//         } else {
+//             reject('promise rejected');
+//         };
+//     }, 3000);
+// });
 
 
+// myPromise
+//     .then((data) => `hey ${data}`)
+//     .then((data) => console.log(data))
+//     .catch((err) => console.log(err))
+//     .finally(() => console.log('mai to chalunga hi !'))
 
 
 
 
 
-let arr = [10, 20, 30, 40, 50];
 
-for (let num of arr) {
-    console.log(typeof typeof typeof num);
+
+// let arr = [10, 20, 30, 40, 50];
+
+// for (let num of arr) {
+//     console.log(typeof typeof typeof num);
+// };
+
+
+
+// for (let i in arr) {
+//     console.log(i)
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------- Prototype ------------------------------------------------
+
+// let obj = {
+//     username: 'Vikkku',
+//     age: 23
+// };
+
+// obj.__proto__.hey = function () {
+//     return 'Hey';
+// };
+
+// console.log(obj.hey());
+
+
+
+
+
+
+// function User(username, age) {
+//     this.username = username;
+//     this.age = age;
+
+
+//     getUsername = () => {
+//         return `hey ${this.username}`
+//     };
+// };
+
+
+
+
+
+// User.prototype.sayHello = function () {
+//     return `Hello ${this.username}`
+// };
+
+
+// let userOne = new User('Vikrm Mistry', 23);
+// console.log(userOne.sayHello());
+
+
+
+
+
+
+
+
+// function Tofee(name, color, flavour) {
+//     this.name = name;
+//     this.color = color;
+//     this.flavour = flavour;
+//     this.price = 30;
+// };
+
+// Tofee.prototype.price = 10;
+
+// let t1 = new Tofee('Melodi', 'chocolaty', 'vanila');
+// console.log(t1.price)
+
+
+
+
+
+
+
+
+
+// let arr = [10, 20, 30];
+
+
+// Object.prototype.sayHello = function () {
+//     return 'Hello Ji Kaise ho ?';
+// };
+
+// Array.prototype.sayHello = function () {
+//     return 'Hello Ji';
+// };
+
+// let fun = function () {
+
+// };
+
+// console.log(fun.sayHello());
+// // let obj = {};
+// console.log(obj.sayHello());
+
+
+
+
+
+
+// let string = 'vikram                ';
+
+// console.log(string.length);
+// String.prototype.trueLength = function () {
+//     return string.trim().length;
+// };
+
+// console.log(string.trueLength());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------ Inheritence ----------------------------------------------------------------
+
+
+
+class User {
+    constructor(username, age, password) {
+        this.username = username;
+        this.age = age;
+        this.password = password;
+    };
 };
 
 
 
-for (let i in arr) {
-    console.log(i)
+class newUser extends User {
+    constructor(username, age, password) {
+        super(username);
+        this.age = age;
+        this.password = password;
+    };
 };
 
-
-
-
-
-
-
-
-
-
-
-
+let one = new newUser('Vikku', 23, '345rt');
+console.log(one.username)
 
 
 

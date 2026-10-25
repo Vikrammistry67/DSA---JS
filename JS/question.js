@@ -54,7 +54,7 @@
 
 
 
-//7 --> 
+//7 -->
 // let fruits = ['apple', 'banana', 'orange', 'kiwi', , 'jk', 'strawberry'];
 
 // let vowels = 'aeiou';
@@ -69,3 +69,6 @@
     
 
 // console.log(ans);
+
+
+
