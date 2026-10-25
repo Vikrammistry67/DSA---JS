@@ -507,26 +507,47 @@ let num = 12;
 
 
 
-class User {
-    constructor(username, age, password) {
-        this.username = username;
-        this.age = age;
-        this.password = password;
-    };
+// class User {
+//     constructor(username, age, password) {
+//         this.username = username;
+//         this.age = age;
+//         this.password = password;
+//     };
+// };
+
+
+
+// class newUser extends User {
+//     constructor(username, age, password) {
+//         super(username);
+//         this.age = age;
+//         this.password = password;
+//     };
+// };
+
+// let one = new newUser('Vikku', 23, '345rt');
+// console.log(one.username)
+
+
+
+
+
+
+let Teacher = {
+    teacherName: 'Akash Suryawanshi',
+    age: 23,
+    isAvailable: true
+};
+
+
+let Student = {
+    studentName: 'Vikram Mistry',
+    age: 35,
+    isAvailable: true,
+    // __proto__: Teacher
 };
 
 
 
-class newUser extends User {
-    constructor(username, age, password) {
-        super(username);
-        this.age = age;
-        this.password = password;
-    };
-};
-
-let one = new newUser('Vikku', 23, '345rt');
-console.log(one.username)
-
-
-
+Object.setPrototypeOf(Student, Teacher);
+console.log(Student.teacherName)
